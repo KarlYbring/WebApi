@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers;
 
-[Route("api/[controller]")]
+[Route("api/projects")]
 [ApiController]
 public class ProjectsController(ProjectService projectService) : ControllerBase
 {
@@ -36,7 +36,7 @@ public class ProjectsController(ProjectService projectService) : ControllerBase
         return project == null ? NotFound() : Ok(project);
     }
 
-    [HttpPut]
+    [HttpPut("{id}")]
     public async Task<IActionResult> Update(ProjectUpdate form)
     {
         if (!ModelState.IsValid)

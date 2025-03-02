@@ -5,7 +5,7 @@ namespace Business.Factories;
 
 public class EmployeeFactory
 {
-    public static Employee Map(EmployeeEntity entity) => new Employee
+    public static Employee? Map(EmployeeEntity entity) => entity == null ? null : new Employee
     {
         Id = entity.Id,
         FirstName = entity.FirstName,

@@ -5,7 +5,7 @@ namespace Business.Factories;
 
 public static class ProjectFactory
 {
-    public static ProjectEntity Map(ProjectUpdate form) => new ProjectEntity()
+    public static ProjectEntity? Map(ProjectUpdate form) => new ProjectEntity()
     {
         Id = form.Id,
         Title = form.Title,
@@ -18,7 +18,7 @@ public static class ProjectFactory
         ProductId = form.ProductId
     };
 
-    public static ProjectEntity Map(ProjectRegistration form) => new ProjectEntity()
+    public static ProjectEntity? Map(ProjectRegistration form) => new ProjectEntity()
     {
         Title = form.Title,
         Description = form.Description,
@@ -30,7 +30,7 @@ public static class ProjectFactory
         ProductId = form.ProductId
 
     };
-    public static Project Map(ProjectEntity entity) => new Project
+    public static Project? Map(ProjectEntity entity) => new Project
     {
 
         Id = entity.Id,

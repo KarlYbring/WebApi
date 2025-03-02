@@ -22,7 +22,7 @@ public class ProjectService(ProjectRepository repo)
         return entity == null ? null : ProjectFactory.Map(entity);
     }
 
-    public async Task<Project> UpdateProjectAsync(ProjectUpdate form)
+    public async Task<Project?> UpdateProjectAsync(ProjectUpdate form)
     {
         var entity = ProjectFactory.Map(form);
         var updatedEntity = await _repo.UpdateAsync(entity);

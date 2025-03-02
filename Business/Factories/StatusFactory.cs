@@ -4,9 +4,9 @@ using System.Reflection;
 
 namespace Business.Factories;
 
-public class StatusFactory
+public static class StatusFactory
 {
-    public static Status Map(StatusEntity entity) => new Status
+    public static Status? Map(StatusEntity entity) => entity == null ? null : new Status
     {
         Id = entity.Id,
         StatusName = entity.StatusName

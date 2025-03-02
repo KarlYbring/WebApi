@@ -5,7 +5,7 @@ namespace Business.Factories;
 
 public class ProductFactory
 {
-    public static Product Map(ProductEntity entity) => new Product
+    public static Product? Map(ProductEntity entity) => entity == null ? null : new Product
     {
         Id = entity.Id,
         ProductName = entity.ProductName,
